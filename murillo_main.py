@@ -13,7 +13,6 @@ def main():
 
         selection = int(input("What Do You Want To Do? Please Input A Number :) : "))
 
-
         if selection == 0:
             exit()
 

@@ -17,7 +17,7 @@ def bubble_sort(values):
     for i in range(len(values) - 1):
         # outer_pass += 1
         # assume the final value in each pass is sorted
-        for j in range(len(values) -i - 1):
+        for j in range(len(values) - i - 1):
             # inner_pass += 1
             # perform the swap using a temp variable
             if values[j] > values[j+1]:
