@@ -1,10 +1,10 @@
 
-import random
-
-numbers = [random.randint(-10, 10) for i in range(10)]  # Gets 10 random numbers from 0-19
-
-print("Initial Values =", numbers)  # Prints the unchanged values in numbers first
-
+# import random
+#
+# numbers = [random.randint(-10, 10) for i in range(10)]  # Gets 10 random numbers from 0-19
+#
+# print("Initial Values =", numbers)  # Prints the unchanged values in numbers first
+#
 
 def insertion_sort(values):
     # Values in this function is what's inside numbers, is serves as a placeholder for the values in numbers
@@ -23,9 +23,9 @@ def insertion_sort(values):
             values[j + 1] = temp  # This sets back the temporary variable to i (j+1)
 
     return values # This returns the sorted values inside numbers
-
-
-numbers = insertion_sort(numbers)  # This makes number equal to the sorted numbers
-
-print("Changed Values =", numbers)  # This prints out the sorted numbers since numbers now equals it.
+#
+#
+# numbers = insertion_sort(numbers)  # This makes number equal to the sorted numbers
+#
+# print("Changed Values =", numbers)  # This prints out the sorted numbers since numbers now equals it.
 
