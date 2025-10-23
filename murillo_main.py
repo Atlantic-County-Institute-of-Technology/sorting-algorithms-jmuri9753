@@ -22,6 +22,26 @@ def main():
 
         os.system('cls' if os.name == 'nt' else 'clear')
 
+        def validate_input():
+            while True:
+                try:
+                    minimum_value = int(input("[-] What would you like as your minimum number/value? "))
+                    maximum_value = int(input("[-] What would you like as your maximum number/value? "))
+
+                    if minimum_value >= maximum_value:
+                        print("[!] MIN & MAX ERROR! MIN VALUE HAS TO BE LESS THAN MAX VALUE! PLEASE TRY AGAIN")
+                    if maximum_value > minimum_value:
+                        return minimum_value, maximum_value
+
+                    list_range = int(input("[-] How many numbers do you want in your list? "))
+
+                    if list_range > 0:
+                        return list_range
+                    else:
+                        print("[!] RANGE ERROR! PLEASE INPUT A POSITIVE INTEGER MORE THAN 0! PLEASE TRY AGAIN")
+                except:
+                    print("[!] ERROR! PLEASE INPUT A INTEGER")
+
         if selection == 0:
             exit()
 
@@ -29,12 +49,12 @@ def main():
             os.system('cls' if os.name == 'nt' else 'clear')
             print("[-] In here, you choose the range of your numbers and how many numbers you want in that range for "
                   "your list!")
-            minimum_value = int(input("[-] What would you like as your minimum number/value? "))
-            maximum_value = int(input("[-] What would you like as your maximum number/value? "))
-            list_range = int(input("[-] How many numbers do you want in your list? "))
-            user_min = minimum_value
-            user_max = maximum_value
-            user_range = list_range
+            validate_input()
+
+
+            user_min = validate_input()
+            user_max = validate_input()
+            user_range = validate_input()
             print("[-] Your numbers in your list will be from ", str(user_min), "-", str(user_max), "and it will have",
                   str(user_range), "numbers!")
 
@@ -47,7 +67,7 @@ def main():
             sub_selection = int(input("Please input the number for the sorting you would like to use for your list : "))
             if sub_selection == 0:
                 os.system('cls' if os.name == 'nt' else 'clear')
-                main()
+                selection = 0
             if sub_selection == 1:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 values = [random.randint(user_min, user_max) for i in range(user_range)]
